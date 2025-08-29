@@ -32,7 +32,11 @@ def load_portfolio_data():
 
 portfolio_data = load_portfolio_data()
 
-# If Excel uploaded, override portfolio_data
+# Always define clients and selected_client (default to first client)
+clients = list(portfolio_data.keys())
+selected_client = st.sidebar.selectbox("Select Client", clients)
+
+# If Excel uploaded, override portfolio_data and update clients/selected_client
 if uploaded_file is not None:
     try:
         if uploaded_file.name.endswith("csv"):
