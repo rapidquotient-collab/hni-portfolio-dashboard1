@@ -61,7 +61,7 @@ def get_live_price(symbol):
 
 # --- Real-Time Features (Manual Refresh) ---
 if st.button("🔄 Refresh Data (Demo)"):
-    st.experimental_rerun()
+    st.rerun()
 
 # --- AUM Summary for All Clients ---
 aum = 0
